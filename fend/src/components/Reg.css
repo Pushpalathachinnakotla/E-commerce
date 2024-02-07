@@ -1,0 +1,45 @@
+.regcon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #40A2E3;
+  }
+  
+  .reg {
+    background-color:#FFF6E9;
+    padding: 20px;
+    width: 30%;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    gap: 10px;
+  }
+  
+  .reg Typography {
+    margin-bottom: 10px;
+  }
+  
+  .reg TextField,#0D9276
+  .reg RadioGroup,
+  .reg Button {
+    margin-bottom: 15px;
+    background-color: ;
+  }
+  
+  .reg TextField {
+    width: 100%;
+  }
+  
+  .reg RadioGroup {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  
+  
+  /* Add more styles as needed */
+  

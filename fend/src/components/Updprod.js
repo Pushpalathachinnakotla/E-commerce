@@ -1,0 +1,39 @@
+import React, { useContext, useEffect, useState } from 'react'
+import Gc from './Gc'
+import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
+import { TextField,Button } from '@mui/material'
+
+const Updprod = () => {
+  let [data,setData]=useState({})
+  let navigate=useNavigate()
+  let obj=useContext(Gc)
+  useEffect(()=>{
+    console.log(obj.usercon.item)
+    let x={...obj.usercon.item}
+    delete x.comm
+    delete x.img
+    setData(x)
+
+  },[])
+  let fun=(e)=>{
+    setData({...data,[e.target.name]:e.target.value})
+  }
+  let upd=()=>{
+    axios.put("http://localhost:5000/updateprod",data,{headers:{"Authorization":obj.usercon.token,"_id":obj.usercon._id}}).then(()=>{
+      navigate("/")
+    })
+  }
+  return (
+    <div>
+      <TextField type='text' value={data.name} onChange={fun} name="name"/>
+      <TextField type='text' value={data.price} onChange={fun} name="price"/>
+      <TextField type='text' value={data.desc} onChange={fun} name="desc"/>
+      <TextField type='text' value={data.cat} onChange={fun} name="cat"/>
+      <Button onClick={upd}>update</Button>
+
+    </div>
+  )
+}
+
+export default Updprod
